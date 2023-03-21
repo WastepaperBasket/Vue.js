@@ -127,7 +127,7 @@ export default {
   display: flex;
   height: 100vh;
   .row {
-    width: 45%;
+    width: 35%;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -137,7 +137,7 @@ export default {
     }
   }
   .col {
-    width: 55%;
+    width: 65%;
   }
 }
 </style>

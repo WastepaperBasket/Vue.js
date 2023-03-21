@@ -131,6 +131,90 @@ export default {
       //   127.38723344758682
       // );
 
+      var circle = new window.kakao.maps.Circle({
+        center: new window.kakao.maps.LatLng(
+          36.36029148553544,
+          127.3939355385042
+        ), // 원의 중심좌표 입니다
+        radius: 250, // 미터 단위의 원의 반지름입니다
+        strokeWeight: 1, // 선의 두께입니다
+        strokeColor: "#ffc200", // 선의 색깔입니다
+        strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+        strokeStyle: "solid", // 선의 스타일 입니다
+        fillColor: "#ffc200", // 채우기 색깔입니다
+        fillOpacity: 0.7, // 채우기 불투명도 입니다
+      });
+      // 지도에 원을 표시합니다
+      circle.setMap(this.map);
+
+      var circle2 = new window.kakao.maps.Circle({
+        center: new window.kakao.maps.LatLng(
+          36.34209238528141,
+          127.38700441102878
+        ), // 원의 중심좌표 입니다
+        radius: 250, // 미터 단위의 원의 반지름입니다
+        strokeWeight: 1, // 선의 두께입니다
+        strokeColor: "#ffc200", // 선의 색깔입니다
+        strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+        strokeStyle: "solid", // 선의 스타일 입니다
+        fillColor: "#ffc200", // 채우기 색깔입니다
+        fillOpacity: 0.7, // 채우기 불투명도 입니다
+      });
+      // 지도에 원을 표시합니다
+      circle2.setMap(this.map);
+
+      var circle3 = new window.kakao.maps.Circle({
+        center: new window.kakao.maps.LatLng(
+          36.35934032799949,
+          127.37300676452114
+        ), // 원의 중심좌표 입니다
+        radius: 250, // 미터 단위의 원의 반지름입니다
+        strokeWeight: 1, // 선의 두께입니다
+        strokeColor: "#ffc200", // 선의 색깔입니다
+        strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+        strokeStyle: "solid", // 선의 스타일 입니다
+        fillColor: "#ffc200", // 채우기 색깔입니다
+        fillOpacity: 0.7, // 채우기 불투명도 입니다
+      });
+      // 지도에 원을 표시합니다
+      circle3.setMap(this.map);
+
+      var circle4 = new window.kakao.maps.Circle({
+        center: new window.kakao.maps.LatLng(
+          36.34473026381731,
+          127.37652400870219
+        ), // 원의 중심좌표 입니다
+        radius: 250, // 미터 단위의 원의 반지름입니다
+        strokeWeight: 1, // 선의 두께입니다
+        strokeColor: "#ffc200", // 선의 색깔입니다
+        strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+        strokeStyle: "solid", // 선의 스타일 입니다
+        fillColor: "#ffc200", // 채우기 색깔입니다
+        fillOpacity: 0.8, // 채우기 불투명도 입니다
+      });
+      // 지도에 원을 표시합니다
+      circle4.setMap(this.map);
+      // 다각형을 구성하는 좌표 배열입니다. 이 좌표들을 이어서 다각형을 표시합니다
+      var polygonPath = [
+        new window.kakao.maps.LatLng(36.357037696475956, 127.39818068749042),
+        new window.kakao.maps.LatLng(36.34814542117717, 127.40553238313936),
+        new window.kakao.maps.LatLng(36.340177162803606, 127.39533239939566),
+        new window.kakao.maps.LatLng(36.348600324481296, 127.39889524754035),
+      ];
+      // 지도에 표시할 다각형을 생성합니다
+      var polygon = new window.kakao.maps.Polygon({
+        path: polygonPath, // 그려질 다각형의 좌표 배열입니다
+        strokeWeight: 1, // 선의 두께입니다
+        strokeColor: "#ff8868", // 선의 색깔입니다
+        strokeOpacity: 0.8, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+        strokeStyle: "solid", // 선의 스타일입니다
+        fillColor: "#ff8868", // 채우기 색깔입니다
+        fillOpacity: 0.7, // 채우기 불투명도 입니다
+      });
+
+      // 지도에 다각형을 표시합니다
+      polygon.setMap(this.map);
+
       for (var i = 0; i < positions.length; i++) {
         // 마커 이미지의 이미지 크기 입니다
         var imageSize = new window.kakao.maps.Size(24, 35);
