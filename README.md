@@ -3,5 +3,5 @@
   <h2 align="center">Vue.js</h2>
   <p align="center">Vue.js study collection 🚀<p>
 
-  <h4 align="center">Vue에 관한 개념정리 🎁<h4>
+  <h4 align="center">Vue AS Project 🎁<h4>
   </p>
