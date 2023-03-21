@@ -16,29 +16,44 @@
           비밀번호
         </span>
       </button>
+
+      <button class="menu_user join">
+        <span class="Login"> 중개사 가입/광고문의 </span>
+      </button>
     </nav>
   </div>
-
-  <div v-for="box in products" :key="box">
-    <h4>{{ box }}</h4>
-    <p>만원</p>
+  <div class="container">
+    <div class="row">
+      <div v-for="box in products" :key="box">
+        <h4>{{ box }}</h4>
+        <p>만원</p>
+      </div>
+    </div>
+    <div class="col">
+      <div>
+        <KakaoMap />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import KakaoMap from "./components/KakaoMap.vue";
 export default {
   name: "App",
+  components: {
+    KakaoMap,
+  },
   data() {
     return {
       menu: ["지도", "분양", "관심목록", "방내놓기", "알림", "비대면 계약"],
       products: ["역삼동원룸", "천호동원룸", "마포구원룸"],
     };
   },
-  components: {},
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
 * {
   box-sizing: border-box;
@@ -64,9 +79,9 @@ export default {
     display: flex;
   }
   img {
-    width: 150px;
+    width: 120px;
     margin: 10px;
-    height: 50px;
+    height: 40px;
     cursor: pointer;
     align-items: center;
   }
@@ -103,6 +118,26 @@ export default {
       position: relative;
       top: 1px;
     }
+  }
+}
+.join {
+  margin-left: 10px;
+}
+.container {
+  display: flex;
+  height: 100vh;
+  .row {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    p {
+      margin-bottom: 30px;
+    }
+  }
+  .col {
+    width: 55%;
   }
 }
 </style>
