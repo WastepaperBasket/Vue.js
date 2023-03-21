@@ -138,10 +138,10 @@ export default {
         ), // 원의 중심좌표 입니다
         radius: 250, // 미터 단위의 원의 반지름입니다
         strokeWeight: 1, // 선의 두께입니다
-        strokeColor: "#ffc200", // 선의 색깔입니다
+        strokeColor: "#5886f6", // 선의 색깔입니다
         strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
         strokeStyle: "solid", // 선의 스타일 입니다
-        fillColor: "#ffc200", // 채우기 색깔입니다
+        fillColor: "#5886f6", // 채우기 색깔입니다
         fillOpacity: 0.7, // 채우기 불투명도 입니다
       });
       // 지도에 원을 표시합니다
@@ -154,10 +154,10 @@ export default {
         ), // 원의 중심좌표 입니다
         radius: 250, // 미터 단위의 원의 반지름입니다
         strokeWeight: 1, // 선의 두께입니다
-        strokeColor: "#ffc200", // 선의 색깔입니다
+        strokeColor: "#5886f6", // 선의 색깔입니다
         strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
         strokeStyle: "solid", // 선의 스타일 입니다
-        fillColor: "#ffc200", // 채우기 색깔입니다
+        fillColor: "#5886f6", // 채우기 색깔입니다
         fillOpacity: 0.7, // 채우기 불투명도 입니다
       });
       // 지도에 원을 표시합니다
@@ -170,10 +170,10 @@ export default {
         ), // 원의 중심좌표 입니다
         radius: 250, // 미터 단위의 원의 반지름입니다
         strokeWeight: 1, // 선의 두께입니다
-        strokeColor: "#ffc200", // 선의 색깔입니다
+        strokeColor: "#5886f6", // 선의 색깔입니다
         strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
         strokeStyle: "solid", // 선의 스타일 입니다
-        fillColor: "#ffc200", // 채우기 색깔입니다
+        fillColor: "#5886f6", // 채우기 색깔입니다
         fillOpacity: 0.7, // 채우기 불투명도 입니다
       });
       // 지도에 원을 표시합니다
@@ -186,10 +186,10 @@ export default {
         ), // 원의 중심좌표 입니다
         radius: 250, // 미터 단위의 원의 반지름입니다
         strokeWeight: 1, // 선의 두께입니다
-        strokeColor: "#ffc200", // 선의 색깔입니다
+        strokeColor: "#5886f6", // 선의 색깔입니다
         strokeOpacity: 1, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
         strokeStyle: "solid", // 선의 스타일 입니다
-        fillColor: "#ffc200", // 채우기 색깔입니다
+        fillColor: "#5886f6", // 채우기 색깔입니다
         fillOpacity: 0.8, // 채우기 불투명도 입니다
       });
       // 지도에 원을 표시합니다

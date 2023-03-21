@@ -22,11 +22,26 @@
       </button>
     </nav>
   </div>
+
   <div class="container">
     <div class="row">
-      <div v-for="box in products" :key="box">
-        <h4>{{ box }}</h4>
+      <div>
+        <h4>{{ products[0] }}</h4>
         <p>만원</p>
+        <button @click="police[0]++">허위매물신고</button>
+        <span>신고수 : {{ police[0] }}</span>
+      </div>
+      <div>
+        <h4>{{ products[1] }}</h4>
+        <p>만원</p>
+        <button @click="police[1]++">허위매물신고</button>
+        <span>신고수 : {{ police[1] }}</span>
+      </div>
+      <div>
+        <h4>{{ products[2] }}</h4>
+        <p>만원</p>
+        <button @click="police[2]++">허위매물신고</button>
+        <span>신고수 : {{ police[2] }}</span>
       </div>
     </div>
     <div class="col">
@@ -46,9 +61,15 @@ export default {
   },
   data() {
     return {
+      police: [0, 0, 0],
       menu: ["지도", "분양", "관심목록", "방내놓기", "알림", "비대면 계약"],
       products: ["역삼동원룸", "천호동원룸", "마포구원룸"],
     };
+  },
+  methods: {
+    increase(i) {
+      this.police[i]++;
+    },
   },
 };
 </script>
@@ -127,6 +148,7 @@ export default {
   display: flex;
   height: 100vh;
   .row {
+    text-align: center;
     width: 35%;
     display: flex;
     flex-direction: column;
