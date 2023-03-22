@@ -6,32 +6,21 @@
         <div class="title">속보 ></div>
         <div class="wrap">
           <ul>
-            <li>
-              <a href="https://www.mk.co.kr/news/realestate"
-                >한달 새 건설 부동산 대출 연체 9천억 껑충…새마을금고 이대로
-                괜찮나</a
-              >
-            </li>
+            <li><a href="#">노바백스 백신 2월중순부터 접종</a></li>
             <li class="next">
-              <a href="https://www.mk.co.kr/news/realestate"
-                >미분양이 10만가구 될거라면서…위기는 없다는 원희룡</a
-              >
+              <a href="#">얼어붙은 투심에…현대엔지니어링 상장 철회</a>
             </li>
             <li class="current">
-              <a href="https://www.mk.co.kr/news/realestate"
-                >롯데건설, 하이엔드 실버타운 ‘VL르웨스트’...23일까지 청약 접수
-              </a>
+              <a href="#"
+                >"일본 정부, 사도광산 세계유산 추천 방침 굳혀, 일본과 갈등
+                첨예화 예상"</a
+              >
             </li>
             <li>
-              <a href="https://www.mk.co.kr/news/realestate"
-                >효성중공업, ‘해링턴 플레이스 다산파크’ 분양</a
-              >
+              <a href="#">"공법변경 구조검토 요구, 현산 측이 묵살했다"</a>
             </li>
             <li class="prev">
-              <a href="https://www.mk.co.kr/news/realestate"
-                >세입자 주소 몰래 옮긴 뒤 서류상 빈집으로 억대 대출 받아 챙긴
-                일당</a
-              >
+              <a href="#">12월 주담대 금리 연 3.63%…7년7개월 만에 최고</a>
             </li>
           </ul>
         </div>
@@ -47,21 +36,20 @@
   position: fixed;
 }
 $font-color: rgb(160, 202, 255);
-// $font-color: black;
 .rollingbanner {
   display: flex;
   -webkit-box-align: center;
   align-items: center;
-  width: 530px;
+  width: 450px;
   height: 60px;
   padding: 9px 25px 8px 9px;
   border: 1px solid rgba(12, 18, 28, 0.92);
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 12px 25px 0px;
   // background-color: rgba(39, 44, 52, 0.92);
-  background-color: rgba(39, 44, 52, 0.92);
+  background-color: white;
   position: absolute;
-  right: 465px;
+  right: 580px;
   bottom: 30px;
   z-index: 300;
   overflow: hidden;
@@ -77,7 +65,7 @@ $font-color: rgb(160, 202, 255);
 /* 롤링 배너 */
 .rollingbanner > .wrap {
   position: relative;
-  width: 85%;
+  width: 80%;
   height: 50%;
   box-sizing: border-box;
   overflow: hidden;
@@ -134,6 +122,7 @@ export default {
   created() {
     setTimeout(() => {
       console.log("this", this);
+      this.sayHi();
     }, 1000);
   },
   mounted() {
@@ -146,6 +135,9 @@ export default {
   },
   unmounted() {},
   methods: {
+    sayHi() {
+      console.log("sayHi");
+    },
     // api 불러오기
     //localhost : d6f7f63094ceaef6d6ee6e0a2d218dbd
     //server : 1914d03923dca3643125bf3c5ebc8d58
@@ -357,7 +349,7 @@ export default {
 var interval;
 document.addEventListener("DOMContentLoaded", () => {
   // 롤링 초기화
-  interval = window.setInterval(rollingCallback, 2000);
+  interval = window.setInterval(rollingCallback, 3000);
 
   //마우스 호버시 롤링이 멈추었다 벗어나면 다시 롤링이 되도록 처리
   document
@@ -368,7 +360,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .querySelector(".rollingbanner")
     .addEventListener("mouseout", function () {
-      interval = window.setInterval(rollingCallback, 2000);
+      interval = window.setInterval(rollingCallback, 1000);
     });
 });
 
