@@ -88,9 +88,11 @@
                   BUY
                 </button>
               </div>
-              <!-- <div class="wrap">
-                <button class="button" @click="modal = false">CLOSE</button>
-              </div> -->
+              <div class="wrap">
+                <button class="button" @click="$emit('closeModal')">
+                  CLOSE
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -100,12 +102,27 @@
 </template>
 
 <script>
+var clientKey = "test_ck_OyL0qZ4G1VO2j12BBPM3oWb2MQYg";
+// eslint-disable-next-line no-unused-vars,no-undef
+var tossPayments = TossPayments(clientKey);
 export default {
   name: "Modal",
   props: {
     room: Array,
     modal: Boolean,
     click: Number,
+  },
+  methods: {
+    PaymentBtn: function (method) {
+      tossPayments.requestPayment(method, {
+        amount: this.price,
+        orderId: "xnDIqpt7Dlfdtd99WwXgu",
+        orderName: "DoYoungPark",
+        customerName: "고객",
+        successUrl: window.location.origin + "/success",
+        failUrl: window.location.origin + "/fail",
+      });
+    },
   },
 };
 </script>
