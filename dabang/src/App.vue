@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="black-bg" v-if="(modal = true)">
+    <div class="black-bg" v-if="modal == true">
       <div class="white-bg">
         <div>
           <div class="room_photo">
@@ -39,6 +39,7 @@
                 </div>
               </div>
               <div class="price_box">
+                <h3>AI 공인중개 사무소</h3>
                 <div class="price_style">
                   <ul>
                     <li><i class="fas fa-house-user"></i><span>원룸</span></li>
@@ -55,9 +56,42 @@
                     </li>
                   </ul>
                 </div>
-                <h3>AI 공인중개 사무소</h3>
-                <button @click="modal = false" class="buy">구매</button>
-                <button @click="modal = false">닫기</button>
+                <div class="select">
+                  <section class="test">
+                    <input
+                      type="radio"
+                      name="shop"
+                      id="select"
+                      value="1000000000000"
+                      v-model="price"
+                    />
+                    <label for="select">1,000,000,000,000 $</label>
+
+                    <input
+                      type="radio"
+                      name="shop"
+                      id="select2"
+                      value="2000000000000"
+                      v-model="price"
+                    />
+                    <label for="select2">2,000,000,000,000 $</label>
+                    <!-- <div v-on:click="PaymentBtn('카드')">카드결제</div>
+                  <div v-on:click="PaymentBtn('가상계좌')">가상계좌</div>
+                  <div v-on:click="PaymentBtn('계좌이체')">계좌이체</div>
+                  <div v-on:click="PaymentBtn('휴대폰')">휴대폰</div> -->
+                  </section>
+                </div>
+                <div class="wrap" style="margin-top: 11px; margin-bottom: 15px">
+                  <button
+                    class="payment-button button2"
+                    v-on:click="PaymentBtn('계좌이체')"
+                  >
+                    BUY
+                  </button>
+                </div>
+                <div class="wrap">
+                  <button class="button" @click="modal = false">CLOSE</button>
+                </div>
               </div>
             </div>
           </div>
@@ -151,6 +185,10 @@
 <!-- Vue -->
 
 <script>
+var clientKey = "test_ck_OyL0qZ4G1VO2j12BBPM3oWb2MQYg";
+// eslint-disable-next-line no-unused-vars,no-undef
+var tossPayments = TossPayments(clientKey);
+
 import KakaoMap from "./components/KakaoMap.vue";
 import room from "./assets/room.js";
 
@@ -161,6 +199,7 @@ export default {
   },
   data() {
     return {
+      price: this.price,
       click: 0,
       modal: false,
       menu: ["지도", "분양", "관심목록", "방내놓기", "알림", "비대면 계약"],
@@ -172,6 +211,16 @@ export default {
     increase() {
       this.police++;
     },
+    PaymentBtn: function (method) {
+      tossPayments.requestPayment(method, {
+        amount: this.price,
+        orderId: "xnDIqpt7Dlfdtd99WwXgu",
+        orderName: "DoYoungPark",
+        customerName: "뇌손실",
+        successUrl: window.location.origin + "/success",
+        failUrl: window.location.origin + "/fail",
+      });
+    },
   },
 };
 </script>
@@ -180,8 +229,25 @@ export default {
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
 
+@mixin button2() {
+  width: 140px;
+  height: 45px;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
 @mixin button() {
-  background: #326cf9;
   color: white;
   font-size: 13px;
   font-weight: 700;
@@ -201,6 +267,59 @@ export default {
 }
 button {
   @include button;
+}
+.select {
+  display: flex;
+  flex-direction: column;
+}
+.test {
+  display: flex;
+  flex-direction: column;
+}
+.select input[type="radio"] {
+  display: none;
+}
+.select input[type="radio"] + label {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #333;
+  line-height: 24px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+}
+.select input[type="radio"] + label {
+  background-color: #fff;
+  color: #333;
+  margin-bottom: 7px;
+}
+.select input[type="radio"]:checked + label {
+  background-color: #333;
+  color: #fff;
+}
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  @include button2;
+}
+.button2 {
+  @include button2;
+  &:hover {
+    background-color: #e11299;
+    box-shadow: 0px 15px 20px rgba(225, 18, 153, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+}
+.button:hover {
+  background-color: #3e54ac;
+  box-shadow: 0px 15px 20px rgba(62, 84, 172, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
 }
 
 .menu {
@@ -496,11 +615,10 @@ button {
         background: tomato;
       }
       button {
-        width: 100%;
-        margin-bottom: 10px;
+        width: 90%;
       }
       h3 {
-        margin: 25px 0px 25px 0px;
+        margin: 10px 0px 20px 0px;
         text-align: left;
       }
     }
