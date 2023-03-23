@@ -56,6 +56,21 @@
                 </ul>
               </div>
               <div class="select">
+                <select v-model="month" name="month">
+                  <option value="0">개월 수 선택해주세요</option>
+                  <option value="1">1개월</option>
+                  <option value="2">2개월</option>
+                  <option value="3">3개월</option>
+                  <option value="4">4개월</option>
+                  <option value="5">5개월</option>
+                  <option value="6">6개월</option>
+                  <option value="7">7개월</option>
+                  <option value="8">8개월</option>
+                  <option value="9">9개월</option>
+                  <option value="10">10개월</option>
+                  <option value="11">11개월</option>
+                  <option value="12">12개월</option>
+                </select>
                 <section class="test">
                   <input
                     type="radio"
@@ -64,20 +79,27 @@
                     value="1000000000000"
                     v-model="price"
                   />
-                  <label for="select">1,000,000,000,000 $</label>
+                  <label for="select">{{
+                    room[click].price2 * month + "   $"
+                  }}</label>
 
-                  <input
+                  <!-- <input
                     type="radio"
                     name="shop"
                     id="select2"
                     value="2000000000000"
                     v-model="price"
                   />
-                  <label for="select2">2,000,000,000,000 $</label>
+                  <label for="select2">2,000,000,000,000 $</label> -->
                   <!-- <div v-on:click="PaymentBtn('카드')">카드결제</div>
                   <div v-on:click="PaymentBtn('가상계좌')">가상계좌</div>
                   <div v-on:click="PaymentBtn('계좌이체')">계좌이체</div>
                   <div v-on:click="PaymentBtn('휴대폰')">휴대폰</div> -->
+
+                  <!-- <p>
+                    {{ month }} 개월 선택함 :
+                    {{ room[click].price2 * month }} 원
+                  </p> -->
                 </section>
               </div>
               <div class="wrap" style="margin-top: 11px; margin-bottom: 15px">
@@ -88,10 +110,13 @@
                   BUY
                 </button>
               </div>
+
               <div class="wrap">
-                <button class="button" @click="$emit('closeModal')">
-                  CLOSE
-                </button>
+                <transition name="fade">
+                  <button class="button" @click="$emit('closeModal')">
+                    CLOSE
+                  </button>
+                </transition>
               </div>
             </div>
           </div>
@@ -107,6 +132,11 @@ var clientKey = "test_ck_OyL0qZ4G1VO2j12BBPM3oWb2MQYg";
 var tossPayments = TossPayments(clientKey);
 export default {
   name: "Modal",
+  data() {
+    return {
+      month: 0,
+    };
+  },
   props: {
     room: Array,
     modal: Boolean,
@@ -122,12 +152,30 @@ export default {
         successUrl: window.location.origin + "/success",
         failUrl: window.location.origin + "/fail",
       });
+      if (!document.querySelector('input[name="shop"]').checked) {
+        alert("가격을 선택 한 후 눌러주세요.");
+      }
     },
   },
 };
+
+// 체크 여부(checked)
 </script>
 
 <style lang="scss">
+.fade-leave-from {
+  opacity: 1;
+}
+.fade-leave-active {
+  transition: all 0.3s;
+}
+.fade-leave-to {
+  opacity: 0;
+}
+
+select[name="month"] {
+  margin-bottom: 10px;
+}
 @mixin button2() {
   width: 140px;
   height: 45px;

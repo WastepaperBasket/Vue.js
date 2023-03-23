@@ -1,14 +1,14 @@
 <template>
   <div>
-    <Modal
-      :room="room"
-      :modal="modal"
-      :click="click"
-      @closeModal="modal = false"
-    />
-
+    <transition name="fade">
+      <Modal
+        :room="room"
+        :modal="modal"
+        :click="click"
+        @closeModal="modal = false"
+      />
+    </transition>
     <Menu :menu="menu" />
-
     <div class="container">
       <Card
         @openModal="
@@ -38,6 +38,7 @@ import Card from "./Card.vue";
 
 export default {
   name: "App",
+  mounted() {},
   components: {
     KakaoMap,
     Modal,
@@ -60,6 +61,16 @@ export default {
 <!-- style -->
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+.fade-enter-from {
+  opacity: 0;
+}
+.fade-enter-active {
+  transition: all 0.3s;
+}
+.fade-enter-to {
+  opacity: 1;
+}
 
 @mixin button2() {
   width: 140px;
@@ -140,6 +151,11 @@ $breakpoint-desktop: 1024px;
       font-size: 13px;
     }
   }
+  .main_logo {
+    p {
+      display: none;
+    }
+  }
   .menu_user {
     display: none !important;
   }
@@ -155,6 +171,11 @@ $breakpoint-desktop: 1024px;
   }
   .col {
     width: 60% !important;
+  }
+  .main_logo {
+    p {
+      font-size: 12px !important;
+    }
   }
   nav {
     font-size: 13px;

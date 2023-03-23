@@ -17,6 +17,8 @@
             <p class="user_content">프리미엄 Since 23.03.22</p>
           </div>
         </div>
+        <button class="btn" @click="priceSort()">가격순 정렬</button>
+        <button class="btn" @click="priceUp()">가격역순 정렬</button>
       </div>
     </div>
 
@@ -56,13 +58,36 @@
 export default {
   name: "Card",
   props: {
-    room: Object,
+    room: Array,
     click: Number,
+  },
+  methods: {
+    priceSort() {
+      var money = this.room;
+      money.sort(function (a, b) {
+        return a.price2 - b.price2;
+      });
+    },
+    priceUp() {
+      var money = this.room;
+      money.sort(function (a, b) {
+        return b.price2 - a.price2;
+      });
+    },
   },
 };
 </script>
 
 <style lang="scss">
+.btn {
+  width: 20%;
+  margin-left: 11px;
+  background: #326cf9;
+  transition: all 0.2s;
+  &:hover {
+    opacity: 0.5;
+  }
+}
 .container {
   display: flex;
   height: auto;
