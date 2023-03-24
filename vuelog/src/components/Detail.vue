@@ -12,7 +12,7 @@
 export default {
   name: "Detail",
   props: {
-    vlog: Array,
+    vlog: Array, //ㅅ
   },
 };
 </script>
