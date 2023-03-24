@@ -1,6 +1,10 @@
 <template>
   <div>
-    <Post :Vuestagram="Vuestagram[0]" />
+    <Post
+      :Vuestagram="Vuestagram[i]"
+      v-for="(box, i) in Vuestagram"
+      :key="box"
+    />
     <!-- <Post />
     <Post /> -->
   </div>

@@ -4,11 +4,16 @@
       <div class="profile"></div>
       <span class="profile-name">{{ Vuestagram.name }}</span>
     </div>
-    <div class="post-body"></div>
+    <div
+      class="post-body"
+      :style="{ backgroundImage: `url(${Vuestagram.postImage})` }"
+    ></div>
     <div class="post-content">
-      <p class="post-likes">43 Likes</p>
-      <p class="post-con"><strong>글쓴이아이디</strong> 임시내용</p>
-      <p class="date">May 15</p>
+      <p class="post-likes">{{ Vuestagram.likes }} Likes</p>
+      <p class="post-con">
+        <strong>{{ Vuestagram.name }}</strong> {{ Vuestagram.content }}
+      </p>
+      <p class="date">{{ Vuestagram.date }}</p>
     </div>
   </div>
 </template>
