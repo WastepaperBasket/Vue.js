@@ -2,10 +2,11 @@
   <div class="menu">
     <nav>
       <div class="main_logo">
-        <router-link to="/map">
-          <img
-            src="data:image/png;base64,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"
-          />
+        <router-link to="/">
+          <div class="main_title">
+            <h2>Home</h2>
+            <h2>Home</h2>
+          </div>
         </router-link>
         <p>지금 결제하면 {{ amount }}% 할인</p>
       </div>
@@ -40,20 +41,27 @@ export default {
     };
   },
   mounted() {
-    setInterval(() => {
+    let timer = setInterval(() => {
       this.amount--;
-      if (!this.amount == 0) {
-        clearInterval();
+      if (this.amount == 0) {
+        clearInterval(timer);
       }
-    }, 1400);
+    }, 2000);
   },
   methods: {
     click(i) {
       if (this.menu[i] == "지도") {
-        this.$router.push({ path: "/map" });
+        this.$router.push({ path: "/" });
       } else if (this.menu[i] == "분양") {
         this.$router.push({ path: "/sales" });
+      } else if (this.menu[i] == "비대면 계약") {
+        this.$router.push({ path: "/recent-room" });
       }
+
+      // else if (this.menu[i] == "관심목록") {
+      // } else if (this.menu[i] == "방내놓기") {
+      // } else if (this.menu[i] == "알림") {
+      // }
     },
   },
   props: {
@@ -63,6 +71,59 @@ export default {
 </script>
 
 <style lang="scss">
+.main_title {
+  position: relative;
+  left: 60px;
+}
+
+.main_title h2 {
+  color: #fff;
+  font-size: 2.3em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.main_title h2:nth-child(1) {
+  color: transparent;
+  color: #bebebe;
+}
+
+.main_title h2:nth-child(2) {
+  -webkit-text-stroke: 2px #326cf9;
+  animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 45%,
+      16% 44%,
+      33% 50%,
+      54% 60%,
+      70% 61%,
+      84% 59%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+
+  50% {
+    clip-path: polygon(
+      0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+
 @keyframes blink-effect {
   50% {
     opacity: 0;
@@ -85,8 +146,9 @@ export default {
       animation: blink-effect 1.4s step-end infinite;
       color: #d2201d;
       font-weight: 700;
-      font-size: 23px;
-      margin-left: 20px;
+      font-size: 18px;
+      margin-left: 200px;
+      text-decoration: underline;
     }
   }
 }
@@ -100,9 +162,9 @@ export default {
     display: flex;
   }
   img {
-    width: 120px;
+    width: 90px;
     margin: 10px;
-    height: 40px;
+    height: 30px;
     cursor: pointer;
     align-items: center;
   }

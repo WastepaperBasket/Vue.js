@@ -30,6 +30,6 @@ export default {
 </script>
 
 <!-- style -->
-<style lang="scss">
+<style lang="scss" scope>
 @import "./style.css";
 </style>

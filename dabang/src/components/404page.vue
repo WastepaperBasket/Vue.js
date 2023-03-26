@@ -1,5 +1,5 @@
 <template>
-  <div class="contai">
+  <div class="contai" style="height: 110vh">
     <section class="page_404">
       <div class="container">
         <div class="row" style="width: 40% !important; top: 160px !important">
@@ -19,7 +19,7 @@
                   >Contact US</a
                 >
                 <a style="margin: 10px"></a>
-                <a href="/map" class="link_404">Go to Home</a>
+                <a href="/" class="link_404">Go to Home</a>
               </div>
             </div>
           </div>
@@ -52,7 +52,6 @@ export default {
 
 .contai {
   width: 100%;
-  height: 100vh;
   position: relative;
 }
 
