@@ -10,7 +10,7 @@
       <div class="row_title ai_user" style="top: 139px">
         <div class="row_main">
           <div class="row_title_user">
-            <img src="./assets/aiphoto.png" />
+            <img src="../assets/aiphoto.png" />
           </div>
           <div class="row_title_content">
             <h1 class="user_title">AI 공인중개사 사무소</h1>
@@ -23,7 +23,7 @@
     </div>
 
     <div class="box">
-      <img src="./assets/aiconstruct.png" class="room-img" />
+      <img src="../assets/aiconstruct.png" class="room-img" />
       <div class="img-box">
         <h4>월세 3000/250</h4>
         <p>오피스텔 · AI원플러스</p>

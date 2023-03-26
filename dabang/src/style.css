@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nanum Gothic", sans-serif;
+  color: #222222;
+}
+
+button {
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 4px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  display: block;
+}
+
+.container {
+  display: flex;
+  height: auto;
+  overflow: hidden;
+}
+.container .col {
+  width: 80%;
+}
+
+@media (min-width: 335px) and (max-width: 757px) {
+  .row {
+    display: none !important;
+  }
+  .menu {
+    overflow-x: scroll;
+  }
+  .menu nav {
+    font-size: 13px;
+  }
+  .main_logo p {
+    display: none;
+  }
+  .menu_user {
+    display: none !important;
+  }
+  .rollingbanner {
+    display: none !important;
+  }
+}
+@media (min-width: 758px) and (max-width: 1023px) {
+  .row {
+    width: 40% !important;
+    height: 247vh !important;
+  }
+  .col {
+    width: 60% !important;
+  }
+  .main_logo p {
+    font-size: 12px !important;
+  }
+  nav {
+    font-size: 13px;
+  }
+  .menu_user .Login {
+    font-size: 11px;
+  }
+  .rollingbanner {
+    width: 395px;
+    right: 400px;
+  }
+  .photo {
+    margin-left: 15px;
+  }
+  .white-bg {
+    overflow: scroll;
+  }
+  .white-bg .footer_main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .white-bg .footer {
+    display: flex;
+  }
+}
+@media (max-width: 1024px) {
+  .row {
+    display: none;
+  }
+  .row_title {
+    width: 40% !important;
+  }
+  .footer_main {
+    flex-direction: column !important;
+  }
+  .white-bg {
+    overflow: scroll;
+  }
+}
+@media (max-width: 1624px) and (min-width: 1025px) {
+  .row {
+    display: none;
+    width: 30% !important;
+  }
+  .row_title {
+    width: 29% !important;
+  }
+  .footer_main {
+    padding: 10px 178px 10px 90px !important;
+  }
+  .white-bg {
+    overflow: scroll;
+  }
+} /*# sourceMappingURL=style.css.map */
