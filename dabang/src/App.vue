@@ -137,7 +137,12 @@ $breakpoint-desktop: 1024px;
 }
 
 @mixin desktop {
-  @media (min-width: #{$breakpoint-desktop}) {
+  @media (max-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+@mixin desktop2 {
+  @media (max-width: #{$breakpoint-desktop + 600px}) and (min-width: #{$breakpoint-desktop}) {
     @content;
   }
 }
@@ -187,9 +192,6 @@ $breakpoint-desktop: 1024px;
     width: 395px;
     right: 400px;
   }
-  .row_title {
-    width: 40% !important;
-  }
   .photo {
     margin-left: 15px;
   }
@@ -209,6 +211,18 @@ $breakpoint-desktop: 1024px;
 @include desktop {
   .row {
     display: none;
+  }
+  .row_title {
+    width: 40% !important;
+  }
+}
+@include desktop2 {
+  .row {
+    display: none;
+    width: 30% !important;
+  }
+  .row_title {
+    width: 29% !important;
   }
 }
 </style>
