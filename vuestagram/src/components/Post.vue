@@ -1,7 +1,10 @@
 <template>
   <div class="post">
     <div class="post-header">
-      <div class="profile"></div>
+      <div
+        class="profile"
+        :style="{ backgroundImage: `url(${Vuestagram.userImage})` }"
+      ></div>
       <span class="profile-name">{{ Vuestagram.name }}</span>
     </div>
     <div
@@ -11,7 +14,8 @@
     <div class="post-content">
       <p class="post-likes">{{ Vuestagram.likes }} Likes</p>
       <p class="post-con">
-        <strong>{{ Vuestagram.name }}</strong> {{ Vuestagram.content }}
+        <strong style="margin-right: 7px">{{ Vuestagram.name }}</strong>
+        {{ Vuestagram.content }}
       </p>
       <p class="date">{{ Vuestagram.date }}</p>
     </div>
@@ -32,7 +36,6 @@ export default {
   width: 100%;
 }
 .profile {
-  background-image: url("https://placeimg.com/100/100/arch");
   width: 30px;
   height: 30px;
   background-size: 100%;
@@ -74,5 +77,54 @@ export default {
 
 .post-content > p > strong {
   color: rgba(255, 255, 255, 0.8);
+}
+body:before {
+  content: "";
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+button {
+  background: #1aab8a;
+  color: #fff;
+  border: none;
+  position: relative;
+  height: 60px;
+  font-size: 1.1em;
+  padding: 0 2em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+  width: 100%;
+  padding: 15px;
+
+  background: transparent;
+  border: none;
+}
+button:hover {
+  background: #fff;
+  color: #1aab8a;
+}
+button:before,
+button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #1aab8a;
+  transition: 300ms ease all;
+}
+button:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+button:hover:before,
+button:hover:after {
+  width: 100%;
+  transition: 600ms ease all;
 }
 </style>
