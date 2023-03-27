@@ -16,6 +16,7 @@
     :Image="Image"
     @write="작성한글 = $event"
   />
+
   <button @click="more">더보기</button>
   <div class="footer">
     <ul class="footer-button-plus">
@@ -29,7 +30,6 @@
 import Container from "./components/Container.vue";
 import Vuestagram from "./assets/vuestagram.js";
 import axios from "axios";
-
 export default {
   name: "App",
   components: {
@@ -54,6 +54,7 @@ export default {
           this.count++;
         });
     },
+
     upload(e) {
       let file = e.target.files;
       console.log(file[0]);

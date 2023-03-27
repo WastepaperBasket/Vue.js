@@ -89,8 +89,8 @@ button {
   color: #fff;
   border: none;
   position: relative;
-  height: 60px;
-  font-size: 1.1em;
+  height: 55px;
+  font-size: 1em;
   padding: 0 2em;
   cursor: pointer;
   transition: 800ms ease all;

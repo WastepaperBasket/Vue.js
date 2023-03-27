@@ -15,11 +15,13 @@
         :style="{ backgroundImage: `url(${Image})` }"
       ></div>
       <div class="filters">
-        <div class="filter-1"></div>
-        <div class="filter-1"></div>
-        <div class="filter-1"></div>
-        <div class="filter-1"></div>
-        <div class="filter-1"></div>
+        <FilterBox
+          :Image="Image"
+          v-for="filter in filter"
+          :key="filter"
+          :filter="filter"
+          >{{ filter }}</FilterBox
+        >
       </div>
     </div>
     <!-- 글작성페이지 -->
@@ -33,7 +35,7 @@
           @input="$emit('write', $event.target.value)"
           class="write-box"
         >
-write!</textarea
+ 하고싶은 이야기를 써주세요.</textarea
         >
       </div>
     </div>
@@ -42,15 +44,23 @@ write!</textarea
 
 <script>
 import Post from "./Post.vue";
+import FilterBox from "./FilterBox.vue";
+import filter from "../assets/filter.js";
 export default {
   name: "Container",
   components: {
     Post,
+    FilterBox,
   },
   props: {
     Vuestagram: Array,
     click: Number,
     Image: String,
+  },
+  data() {
+    return {
+      filter,
+    };
   },
 };
 </script>
@@ -59,7 +69,6 @@ export default {
 .upload-image {
   width: 100%;
   height: 450px;
-  background: cornflowerblue;
   background-size: cover;
 }
 .filters {
