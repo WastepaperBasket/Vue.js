@@ -38,7 +38,7 @@ export default {
   methods: {
     more() {
       axios
-        .get(`https://detailhtml.github.io/vue/more${this.count}.json`)
+        .get(`https://detailhtml초.github.io/vue/more${this.count}.json`)
         .then((result) => {
           console.log(result.data);
           this.Vuestagram.push(result.data);
