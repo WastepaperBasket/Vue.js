@@ -7,10 +7,10 @@
           <p>전문가가 직접 현장확인 및 촬영환 매물이니 안심하세요 :)</p>
         </div>
       </div>
-      <div class="row_title ai_user" style="top: 139px">
+      <div class="row_title ai_user" style="top: 123px">
         <div class="row_main">
           <div class="row_title_user">
-            <img src="./assets/aiphoto.png" />
+            <img src="../assets/aiphoto.png" />
           </div>
           <div class="row_title_content">
             <h1 class="user_title">AI 공인중개사 사무소</h1>
@@ -23,7 +23,7 @@
     </div>
 
     <div class="box">
-      <img src="./assets/aiconstruct.png" class="room-img" />
+      <img src="../assets/aiconstruct.png" class="room-img" />
       <div class="img-box">
         <h4>월세 3000/250</h4>
         <p>오피스텔 · AI원플러스</p>
@@ -94,7 +94,7 @@ export default {
   overflow: hidden;
   .row {
     position: relative;
-    top: 206px;
+    top: 196px;
     text-align: center;
     width: 23%;
     height: 256vh;
@@ -105,7 +105,7 @@ export default {
     overflow-y: scroll;
     .row_title {
       position: fixed;
-      top: 72px;
+      top: 56px;
       left: 0;
       font-size: 13px;
       width: 24%;
