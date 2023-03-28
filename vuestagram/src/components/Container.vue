@@ -11,6 +11,7 @@
     <!-- 필터선택페이지 -->
     <div v-if="click == 1">
       <div
+        :class="selfill"
         class="upload-image"
         :style="{ backgroundImage: `url(${Image})` }"
       ></div>
@@ -27,6 +28,7 @@
     <!-- 글작성페이지 -->
     <div v-if="click == 2">
       <div
+        :class="selfill"
         class="upload-image"
         :style="{ backgroundImage: `url(${Image})` }"
       ></div>
@@ -60,7 +62,18 @@ export default {
   data() {
     return {
       filter,
+      selfill: "",
     };
+  },
+  // mounted() {
+  //   this.emiter.on("필터", (result) => {
+  //     selectFilter = this.result;
+  //   });
+  mounted() {
+    this.emitter.on("필터", (result) => {
+      console.log("Container입니다" + result);
+      this.selfill = result;
+    });
   },
 };
 </script>

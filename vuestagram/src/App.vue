@@ -42,7 +42,14 @@ export default {
       Vuestagram,
       Image: "",
       작성한글: "",
+      selfill: "",
     };
+  },
+  mounted() {
+    this.emitter.on("필터", (result) => {
+      console.log("App.vue 입니다" + result);
+      this.selfill = result;
+    });
   },
   methods: {
     more() {
@@ -72,7 +79,7 @@ export default {
         date: "May 15",
         liked: false,
         content: this.작성한글,
-        filter: "perpetua",
+        filter: this.selfill,
       };
       this.Vuestagram.unshift(myVue);
       this.click = 0;

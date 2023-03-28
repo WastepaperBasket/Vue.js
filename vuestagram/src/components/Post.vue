@@ -7,7 +7,9 @@
       ></div>
       <span class="profile-name">{{ Vuestagram.name }}</span>
     </div>
+    <!-- 🌟🌟🌟🌟🌟 -->
     <div
+      :class="Vuestagram.filter"
       class="post-body"
       :style="{ backgroundImage: `url(${Vuestagram.postImage})` }"
     ></div>
@@ -25,6 +27,7 @@
 <script>
 export default {
   name: "Post",
+
   props: {
     Vuestagram: Object,
   },

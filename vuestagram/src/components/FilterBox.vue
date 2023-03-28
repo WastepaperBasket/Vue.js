@@ -2,8 +2,11 @@
   <div
     :class="`${filter}  filter-item`"
     :style="`background-image:url(${Image})`"
+    @click="fire"
   >
-    <p><slot></slot></p>
+    <p>
+      <slot></slot>
+    </p>
   </div>
 </template>
 
@@ -12,13 +15,19 @@ export default {
   name: "FilterBox",
   props: {
     Image: String,
-    filter: Array,
+    filter: String,
+  },
+  methods: {
+    fire() {
+      this.emitter.emit("필터", this.filter);
+    },
   },
 };
 </script>
 
 <style>
 .filter-item {
+  cursor: pointer;
   width: 100px;
   height: 100px;
   margin: 10px 10px 10px auto;
