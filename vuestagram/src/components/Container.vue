@@ -5,6 +5,7 @@
         :Vuestagram="Vuestagram[i]"
         v-for="(box, i) in Vuestagram"
         :key="box"
+        :idx="i"
       />
     </div>
 
@@ -65,10 +66,6 @@ export default {
       selfill: "",
     };
   },
-  // mounted() {
-  //   this.emiter.on("필터", (result) => {
-  //     selectFilter = this.result;
-  //   });
   mounted() {
     this.emitter.on("필터", (result) => {
       console.log("Container입니다" + result);

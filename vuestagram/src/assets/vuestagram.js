@@ -32,7 +32,7 @@ export default [
     date: "Apr 20",
     liked: false,
     content: "시골에다가 이런 집 하나 짓고 개발을····.",
-    filter: "clarendon",
+    filter: "perpetua",
   },
   {
     name: "Minny",
@@ -44,6 +44,6 @@ export default [
     date: "Apr 4",
     liked: false,
     content: "개는 휼륭하다 ! 많은연락을 주세요",
-    filter: "lofi",
+    filter: "perpetua",
   },
 ];

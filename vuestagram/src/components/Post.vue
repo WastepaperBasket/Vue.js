@@ -9,12 +9,16 @@
     </div>
     <!-- 🌟🌟🌟🌟🌟 -->
     <div
+      @click="$store.commit('changeLikes', idx)"
       :class="Vuestagram.filter"
       class="post-body"
       :style="{ backgroundImage: `url(${Vuestagram.postImage})` }"
     ></div>
     <div class="post-content">
-      <p class="post-likes">{{ Vuestagram.likes }} Likes</p>
+      <p class="post-likes">
+        {{ $store.state.likes[idx] }}
+        Likes {{ $store.state.heart[idx] }}
+      </p>
       <p class="post-con">
         <strong style="margin-right: 7px">{{ Vuestagram.name }}</strong>
         {{ Vuestagram.content }}
@@ -30,6 +34,7 @@ export default {
 
   props: {
     Vuestagram: Object,
+    idx: Number,
   },
 };
 </script>

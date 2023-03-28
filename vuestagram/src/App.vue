@@ -24,11 +24,6 @@
       <label for="file" class="input-plus">+</label>
     </ul>
   </div>
-
-  <h1>{{ $store.state.name }}</h1>
-
-  <button @click="$store.state.name = '박'">버튼</button>
-  <!-- 직접 변경은 비추.. -->
 </template>
 
 <script>
@@ -63,6 +58,7 @@ export default {
         .then((result) => {
           console.log(result.data);
           this.Vuestagram.push(result.data);
+          this.$store.commit("changePosts", this.posts);
           this.count++;
         });
     },
@@ -87,6 +83,8 @@ export default {
         filter: this.selfill,
       };
       this.Vuestagram.unshift(myVue);
+      this.$store.commit("changePosts", this.posts);
+      this.step = 0;
       this.click = 0;
     },
   },
