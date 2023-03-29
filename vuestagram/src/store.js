@@ -1,4 +1,5 @@
 import { createStore } from "vuex";
+import axios from "axios";
 import posts from "./assets/vuestagram.js";
 
 const store = createStore({
@@ -6,15 +7,17 @@ const store = createStore({
     return {
       name: "Vuex",
       age: 20,
-
-      click: false,
       likes: posts.map((post) => post.likes),
       liked: posts.map((post) => post.liked),
       heart: posts.map((post) => (post.liked ? "💖" : "")),
+      more: {},
     };
   },
   mutations: {
     //state 꼭 여기다가 데이터만
+    setMore(state, date) {
+      state.more = date;
+    },
     changeLikes(state, idx) {
       if (state.liked[idx] === false) {
         state.likes[idx]++;
@@ -28,9 +31,14 @@ const store = createStore({
     },
     changePosts(state, posts) {
       state.posts = posts;
-      state.likes = posts.map((post) => post.likes);
-      state.liked = posts.map((post) => post.liked);
-      state.heart = posts.map((post) => (post.liked ? "💖" : ""));
+    },
+  },
+  actions: {
+    getDate(context) {
+      axios.get("https://detailhtml.github.io/vue/more1.json").then((a) => {
+        console.log(a.data);
+        context.commit("setMore", a.data);
+      });
     },
   },
 });

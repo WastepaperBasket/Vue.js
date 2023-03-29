@@ -42,6 +42,10 @@
         >
       </div>
     </div>
+
+    <div v-if="click == -1">
+      <MyPage />
+    </div>
   </div>
 </template>
 
@@ -49,11 +53,13 @@
 import Post from "./Post.vue";
 import FilterBox from "./FilterBox.vue";
 import filter from "../assets/filter.js";
+import MyPage from "./MyPage.vue";
 export default {
   name: "Container",
   components: {
     Post,
     FilterBox,
+    MyPage,
   },
   props: {
     Vuestagram: Array,

@@ -1,14 +1,20 @@
 <template>
   <div class="header">
     <ul class="header-button-left">
-      <li>Cancel</li>
+      <li v-if="click == -1" @click="click = -1">MyPage</li>
+      <li v-if="click == 0" @click="click = -1">MyPage</li>
+      <li v-if="click == 1">Cancel</li>
+      <li v-if="click == 2">Cancel</li>
     </ul>
     <ul class="header-button-right">
+      <li v-if="click == -1" @click="click++">Next</li>
       <li v-if="click == 1" @click="click++">Next</li>
       <li v-if="click == 2" @click="publish">발행</li>
     </ul>
     <img src="./assets/logo.png" class="logo" />
   </div>
+  <!-- <p>{{ $store.state.more }}</p>
+  <button @click="$store.dispatch('getDate')">더보기버튼</button> -->
 
   <Container
     :Vuestagram="Vuestagram"
